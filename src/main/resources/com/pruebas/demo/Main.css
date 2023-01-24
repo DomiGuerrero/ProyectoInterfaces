@@ -1,0 +1,25 @@
+.fondo{
+    -fx-background-color : #0d1b2a;
+}
+.texto-cabecera{
+    -fx-font-size : 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.btn-menu {
+    -fx-background-color: #778da9;
+    -fx-text-fill:  white;
+    -fx-font-size: 16px;
+    -fx-padding: 16px;
+    -fx-background-radius: 0px;
+}
+.btn-menu:hover{
+    -fx-background-color: lightblue;
+}
+.btn-menu:pressed{
+    -fx-background-color: #0d1b2a;
+}
+.btn-menu:focused {
+    -fx-text-fill: lightblue;
+    -fx-background-color: #0d1b2a;
+}
