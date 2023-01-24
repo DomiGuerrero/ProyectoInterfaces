@@ -5,8 +5,11 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import org.bson.Document;
 
@@ -15,6 +18,8 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Main extends Application {
+
+    public static BorderPane mainNode;
     final String FICHERO_CONFIGURACION ="settings.properties";
     static Properties configuracion =  new Properties();
     static MongoClient clienteMongo;
@@ -65,12 +70,11 @@ public class Main extends Application {
                 .append("Fecha_lanzamiento",2008);
         System.out.println(databaseMongo.getCollection("Peliculas").insertOne(pelicula));
 
-
-
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        mainNode = fxmlLoader.load();
+        Scene scene = new Scene(mainNode,650,400);
         stage.setTitle("Información de películas");
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.setScene(scene);
         stage.show();
     }
